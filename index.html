@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    
+    <aside class="sideBar">
+        <h1 class="logo"><span class="logo-ico">📦</span> Estoque</h1>
+        <p class="side-label">Ações</p>
+        <button class="side-btn" id="btnNovo">
+            <img src="imagens/adcionar-itens.png" alt="" width="20" height="20"> Novo produto
+        </button>
+        <p class="side-label">Buscar</p>
+        <input type="search" id="busca" class="busca" placeholder="Nome do produto...">
+    </aside>
+    
+    <main class="MainContent">
+        
+        <div class="KPIS">
+
+            <div class="card">
+                <div class="card-header">
+                    <img src="imagens/itens.png" alt="imagem de carrinho"  width="25" height="25">
+                    <span>Produtos em Estoque</span>
+
+                </div>
+                <div class="card-body">
+
+                    <h2 id="QntItens">Carregando...</h2>
+                    
+                </div>
+
+            </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <img src="imagens/alerta.png" alt="imagem de carrinho"  width="25" height="25">
+                        <span>Abaixo do mínimo</span>
+                    
+                    </div>
+                    <div class="card-body">
+                        <h2 id="Avisos">Carregando...</h2>
+                        <small id="AvisosTexto"></small>
+                    </div>
+                </div>
+        </div>
+
+        <div class="InfoProdu">
+
+            <div class="table-RMov">
+                <table>
+
+                    <caption><h3>Movimentações recentes</h3></caption>
+                    <thead>
+                        <tr><th>Produto</th><th>Tipo</th><th>Qtd.</th><th>Quando</th></tr>
+                    </thead>
+                    <tbody id="RMov"></tbody>
+
+                </table>
+
+            </div>
+
+
+            <div class="table-container">
+                <div class="table-header">
+                    <h3>Produtos</h3>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Qtd. em Estoque</th>
+                            <th>Estoque Mínimo</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                <tbody id="Bodytable">
+                   
+                </tbody>    
+                </table>
+
+            </div>
+
+        </div>
+        
+
+
+
+
+    </main>
+
+    <dialog id="dlgItem">
+        <form method="dialog" id="formItem">
+            <h3 id="dlgItemTitulo">Novo produto</h3>
+            <label>Nome <input name="nome" required maxlength="150"></label>
+            <label>Quantidade <input name="quantidade" type="number" min="0" step="1" required value="0"></label>
+            <label>Estoque mínimo <input name="quantidadeMinima" type="number" min="0" step="1" required value="0"></label>
+            <div class="dlg-acoes">
+                <button type="button" class="btn-sec" data-fechar>Cancelar</button>
+                <button type="submit" class="btn-pri">Salvar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="dlgMov">
+        <form method="dialog" id="formMov">
+            <h3 id="dlgMovTitulo">Entrada</h3>
+            <label>Quantidade <input name="quantidade" type="number" min="1" step="1" required value="1"></label>
+            <div class="dlg-acoes">
+                <button type="button" class="btn-sec" data-fechar>Cancelar</button>
+                <button type="submit" class="btn-pri">Confirmar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status"></div>
+
+    <script src="script/script.js"></script>
+
+</body>
+</html>
