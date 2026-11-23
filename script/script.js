@@ -1,4 +1,4 @@
-const API_URL = "sistema-de-estoque-back-production.up.railway.app";
+const API_URL = "https://sistema-de-estoque-back-production.up.railway.app/api/itens";
 
 const $ = (id) => document.getElementById(id);
 const elQnt = $("QntItens");
